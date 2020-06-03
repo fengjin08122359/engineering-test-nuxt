@@ -1,18 +1,15 @@
 {
-  "name": "engineering-test",
+  "name": "engineering-test-include",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "start": "npm run serve",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "build:engineer": "vue-cli-service build --mode engineer",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "postcss-namespace-selector": "0.0.3",
-    "postcss-plugin-namespace": "0.0.2",
     "vue": "^2.6.11"
   },
   "devDependencies": {

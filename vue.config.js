@@ -2,10 +2,6 @@ module.exports = {
     lintOnSave: process.env.NODE_ENV !== 'production',
     transpileDependencies: ['@mikefeng110808'],
     configureWebpack: () => ({
-      output: {
-        library: 'webpackoutput',
-        libraryTarget:'umd'
-      },
       optimization: {
        splitChunks: {
         chunks: "async",

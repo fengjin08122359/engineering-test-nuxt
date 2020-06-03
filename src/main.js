@@ -1,15 +1,15 @@
 import Vue from 'vue'
 import App from './App.vue'
-import {mount} from './mount'
+import {getInstance, mount} from './layout'
+
 Vue.config.productionTip = false
 
-let vueInstance = new Vue({
+new Vue({
   render: h => h(App),
-})
+}).$mount('#app')
 
-if (process.env.VUE_APP_MOUNT_TARGET !== 'engineer') {
-  mount(vueInstance)
+var target = getInstance('engineering-test')
+if (target) {
+  mount(target, 'appid')
 }
-export {
-  vueInstance
-}
+
