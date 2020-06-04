@@ -20,7 +20,6 @@ let loadIncludeFolders = () => {
 }
 
 let loadFoldersJsAndCss = (filename, folderKeys, folder) => {
-    console.log(folderKeys)
     var jsfiles = folderKeys.filter(key => {
         return key.match(`./${filename}/js/`) && key.match(/\.js/g) && excludeFile.reduce((total,current) => {
             return total && !key.match(current)
@@ -44,7 +43,7 @@ let loadFoldersJsAndCss = (filename, folderKeys, folder) => {
 }
 
 loadIncludeFolders()
-console.log(engineerList)
+
 export let getInstance = (name) => {
     var target = engineerList.find(item => item.name == name)
     return target ? target : null
@@ -62,6 +61,4 @@ export let mount = (instance, id = 'app', appendToTarget = document.body) => {
     }
     return target
 }
-
-
 
