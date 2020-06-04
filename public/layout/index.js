@@ -4,7 +4,6 @@ let excludeFile = [/*'chunk-vue-vendors'*/]
 
 let loadIncludeFolders = () => {
     var folders = {}
-    // var folder  = require.context('../../public/layout', true, /\/([\s\S]*(\.js|\.css))/)
     var folder  = require.context('./', true, /\/([\s\S]*(\.js|\.css))/)
     folder.keys().forEach(key => {
         key = key.replace(/\.\//g,'')
@@ -20,7 +19,6 @@ let loadIncludeFolders = () => {
 }
 
 let loadFoldersJsAndCss = (filename, folderKeys, folder) => {
-    console.log(folderKeys)
     var jsfiles = folderKeys.filter(key => {
         return key.match(`./${filename}/js/`) && key.match(/\.js/g) && excludeFile.reduce((total,current) => {
             return total && !key.match(current)

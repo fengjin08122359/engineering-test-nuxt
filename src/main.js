@@ -10,6 +10,6 @@ new Vue({
 
 var target = getInstance('engineering-test')
 if (target) {
-  mount(target, 'appid')
+  mount(target, 'appid', document.body)
 }
 
