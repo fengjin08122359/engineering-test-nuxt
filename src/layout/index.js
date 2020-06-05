@@ -1,7 +1,7 @@
 import './vendor'
 let engineerList = []
 let excludeFile = [/*'chunk-vue-vendors'*/]
-
+window.engineerList = engineerList
 let loadIncludeFolders = () => {
     var folders = {}
     // var folder  = require.context('../../public/layout', true, /\/([\s\S]*(\.js|\.css))/)
@@ -62,3 +62,17 @@ export let mount = (instance, id = 'app', appendToTarget = document.body) => {
     return target
 }
 
+export let  AppendTo = (name, domTarget=document.body) =>  {
+    var target = getInstance(name)
+    if (target) {
+      mount(target, 'appid', domTarget)
+      initRouter(name, target.vueInstance.$router)
+    }
+    return target
+}
+
+let initRouter  = (name, router) => {
+    router.beforeEach((to, from, next) => {
+        next()
+    })
+}

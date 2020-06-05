@@ -1,7 +1,7 @@
 let vendorContainer = {
     'vue': require('vue'),
-    // 'vuex': require('vuex'),
-    // 'vue-router': require('vue-router'),
+    'vuex': require('vuex'),
+    'vue-router': require('vue-router'),
 }
 
 
