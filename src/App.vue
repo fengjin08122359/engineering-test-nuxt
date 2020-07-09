@@ -1,21 +1,35 @@
 <template>
   <div id="app">
+    <div v-for="(item, index) in engineerList" :key="index" @click="jump(item)">
+      {{item.name}}
+    </div>
     <keep-alive>
     <router-view></router-view>
     </keep-alive>
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 
+import {engineerList} from '@/layout/index' 
 export default {
   name: 'App',
+  data() {
+    return {
+      engineerList
+    }
+  },
   components: {
     HelloWorld
-  }
+  },
+  methods: {
+    jump (item) {
+      this.$router.push({
+        name: item.name
+      })
+    }
+  },
 }
 </script>
 

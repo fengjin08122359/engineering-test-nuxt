@@ -1,7 +1,6 @@
 <template>
   <div id="Single" >
-    <div @click="changeRouter">Single</div>
-    <div ref='single'></div>
+    
   </div>
 </template>
 
@@ -13,7 +12,7 @@ export default {
     return {}
   },
   mounted() {
-    AppendTo('engineering-test-test', this.$refs.single)
+    // AppendTo('engineering-test-test', this.$refs.single)
   },
   methods: {
       changeRouter () {

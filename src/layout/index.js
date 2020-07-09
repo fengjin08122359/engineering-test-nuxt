@@ -1,5 +1,5 @@
 import './vendor'
-let engineerList = []
+export let engineerList = []
 let excludeFile = [/*'chunk-vue-vendors'*/]
 window.engineerList = engineerList
 let loadIncludeFolders = () => {
@@ -66,7 +66,7 @@ export let  AppendTo = (name, domTarget=document.body) =>  {
     var target = getInstance(name)
     if (target) {
       mount(target, 'appid', domTarget)
-      initRouter(name, target.vueInstance.$router)
+    //   initRouter(name, target.vueInstance.$router)
     }
     return target
 }
