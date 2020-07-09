@@ -1,33 +1,20 @@
-# engineering-test-include
+# engineering-test-nuxt
 
-## Project setup
-```
-yarn install
-```
+## Build Setup
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+```bash
+# install dependencies
+$ yarn install
 
-### Compiles and minifies for production
-```
-yarn build
-```
+# serve with hot reload at localhost:3000
+$ yarn dev
 
-### Lints and fixes files
-```
-yarn lint
+# build for production and launch server
+$ yarn build
+$ yarn start
+
+# generate static project
+$ yarn generate
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-
-
-//webpack打包部分，在postcss插件中 添加namespace的控制
-config.postcss.push(postcss.plugin('namespace', () => css =>
-  css.walkRules(rule => {
-    if (rule.parent && rule.parent.type === 'atrule' && rule.parent.name !== 'media') return;
-    rule.selectors = rule.selectors.map(s => `.namespace-kaoqin ${s === 'body' ? '' : s}`);
-  })
-));
+For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).

@@ -1,8 +1,7 @@
 import './vendor'
 export let engineerList = []
 let excludeFile = [/*'chunk-vue-vendors'*/]
-window.engineerList = engineerList
-let loadIncludeFolders = () => {
+export let loadIncludeFolders = () => {
     var folders = {}
     // var folder  = require.context('../../public/layout', true, /\/([\s\S]*(\.js|\.css))/)
     var folder  = require.context('./', true, /\/([\s\S]*(\.js|\.css))/)
@@ -42,7 +41,7 @@ let loadFoldersJsAndCss = (filename, folderKeys, folder) => {
     })
 }
 
-loadIncludeFolders()
+// loadIncludeFolders()
 
 export let getInstance = (name) => {
     var target = engineerList.find(item => item.name == name)

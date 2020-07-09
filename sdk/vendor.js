@@ -4,9 +4,10 @@ let vendorContainer = {
     'vue-router': require('vue-router'),
 }
 
-
-window.engineer = {
-    require (name) {
-        return vendorContainer[name]
+if (process.browser) {
+    window.engineer = {
+        require (name) {
+            return vendorContainer[name]
+        }
     }
 }
